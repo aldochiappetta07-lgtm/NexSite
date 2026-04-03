@@ -21,7 +21,7 @@
       <div class="ns-container ns-header-inner">
         <a href="#top" class="ns-logo">
           <img class="ns-logo-icon" src="logo1.png" alt="Logo NexSite" loading="eager" decoding="async" />
-          <img class="ns-logo-wordmark" src="nome_azienda_.png" alt="Scritta NexSite" loading="eager" decoding="async" />
+          <img class="ns-logo-wordmark" src="nome azienda .png" alt="Scritta NexSite" loading="eager" decoding="async" />
         </a>
         <nav class="ns-nav" aria-label="Navigazione principale">
           <button class="ns-nav-toggle" aria-label="Apri il menu" aria-expanded="false">
@@ -68,7 +68,7 @@
             <div class="ns-hero-card">
               <div class="ns-hero-logo">
                 <img class="ns-logo-icon ns-logo-icon-large" src="logo1.png" alt="Logo NexSite" loading="lazy" decoding="async" />
-                <img class="ns-logo-wordmark ns-logo-wordmark-large" src="nome_azienda_.png" alt="Scritta NexSite" loading="lazy" decoding="async" />
+                <img class="ns-logo-wordmark ns-logo-wordmark-large" src="nome azienda .png" alt="Scritta NexSite" loading="lazy" decoding="async" />
               </div>
               <div class="ns-hero-screenshot">
                 <div class="ns-browser-bar">
@@ -373,7 +373,7 @@
           <div class="ns-footer-brand">
             <a href="#top" class="ns-logo">
               <img class="ns-logo-icon" src="logo1.png" alt="Logo NexSite" loading="lazy" />
-              <img class="ns-logo-wordmark" src="nome_azienda_.png" alt="NexSite" loading="lazy" />
+              <img class="ns-logo-wordmark" src="nome azienda .png" alt="NexSite" loading="lazy" />
             </a>
             <p class="ns-footer-tagline">Siti web su misura che convertono.</p>
           </div>
@@ -415,65 +415,6 @@
         </div>
       </div>
     </footer>
-
-    <script>
-      // Smooth scroll per bottoni con data-scroll-to
-      document.querySelectorAll('[data-scroll-to]').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const target = document.querySelector(btn.dataset.scrollTo);
-          if (target) target.scrollIntoView({ behavior: 'smooth' });
-        });
-      });
-
-      // Menu hamburger mobile
-      const toggle = document.querySelector('.ns-nav-toggle');
-      const navLinks = document.querySelector('.ns-nav-links');
-      if (toggle && navLinks) {
-        toggle.addEventListener('click', () => {
-          const isOpen = navLinks.classList.toggle('ns-nav-open');
-          toggle.setAttribute('aria-expanded', isOpen);
-          toggle.setAttribute('aria-label', isOpen ? 'Chiudi il menu' : 'Apri il menu');
-        });
-        // Chiudi il menu quando si clicca un link
-        navLinks.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            navLinks.classList.remove('ns-nav-open');
-            toggle.setAttribute('aria-expanded', 'false');
-          });
-        });
-      }
-
-      // Animazioni scroll (Intersection Observer)
-      const reveals = document.querySelectorAll('.ns-reveal');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('ns-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15 });
-      reveals.forEach(el => observer.observe(el));
-
-      // Form submit con feedback
-      const form = document.querySelector('.ns-form');
-      const formNote = document.getElementById('form-note');
-      if (form) {
-        form.addEventListener('submit', (e) => {
-          e.preventDefault();
-          const btn = form.querySelector('button[type="submit"]');
-          btn.disabled = true;
-          btn.textContent = 'Invio in corso…';
-          // Simulazione invio (sostituire con fetch reale)
-          setTimeout(() => {
-            formNote.textContent = '✅ Messaggio inviato! Ti risponderemo entro 24 ore.';
-            formNote.style.color = '#22c55e';
-            btn.textContent = 'Invia richiesta';
-            btn.disabled = false;
-            form.reset();
-          }, 1500);
-        });
-      }
-    </script>
+      <script src="script.js"></script>
   </body>
 </html>
