@@ -1,1 +1,69 @@
-<!-- Content of index1.html goes here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Your Website Title</title>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const hamburger = document.querySelector('.hamburger');
+          const navMenu = document.querySelector('.nav-menu');
+
+          hamburger.addEventListener('click', () => {
+              navMenu.classList.toggle('active');
+          });
+
+          const smoothScroll = (target) => {
+              document.querySelector(target).scrollIntoView({
+                  behavior: 'smooth'
+              });
+          };
+
+          document.querySelectorAll('a.smooth-scroll').forEach(anchor => {
+              anchor.addEventListener('click', function (e) {
+                  e.preventDefault();
+                  smoothScroll(this.getAttribute('href'));
+              });
+          });
+
+          // Add form handling scripts here
+      });
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="hamburger">☰</div>
+        <ul class="nav-menu">
+            <li><a href="#home" class="smooth-scroll">Home</a></li>
+            <li><a href="#about" class="smooth-scroll">About</a></li>
+            <li><a href="#services" class="smooth-scroll">Services</a></li>
+            <li><a href="#contact" class="smooth-scroll">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h1>Welcome to Our Website</h1>
+        <p>Your content goes here.</p>
+        <img src="image1.jpg" alt="Description of image 1">
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Information about your website.</p>
+        <img src="image2.jpg" alt="Description of image 2">
+    </section>
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>Details about services offered.</p>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="submit_form.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+</body>
+</html>
